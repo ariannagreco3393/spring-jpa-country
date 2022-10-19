@@ -18,26 +18,26 @@ public class Country {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int country_id;
+	private int countryId;
 	private String name;
 	private BigDecimal area;
-	private LocalDate national_day;
-	private char country_code2;
-	private char country_code3;
+	private LocalDate nationalDay;
+	private char countryCode2;
+	private char countryCode3;
 	
 	
 	@ManyToOne
 	@JoinColumn(name = "region_id", nullable = false)
-	private Country region;
+	private Region region;
 
 
-	public int getCountry_id() {
-		return country_id;
+	public int getCountryId() {
+		return countryId;
 	}
 
 
-	public void setCountry_id(int country_id) {
-		this.country_id = country_id;
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
 	}
 
 
@@ -61,44 +61,47 @@ public class Country {
 	}
 
 
-	public LocalDate getNational_day() {
-		return national_day;
+	public LocalDate getNationalDay() {
+		return nationalDay;
 	}
 
 
-	public void setNational_day(LocalDate national_day) {
-		this.national_day = national_day;
+	public void setNationalDay(LocalDate nationalDay) {
+		this.nationalDay = nationalDay;
 	}
 
 
-	public char getCountry_code2() {
-		return country_code2;
+	public char getCountryCode2() {
+		return countryCode2;
 	}
 
 
-	public void setCountry_code2(char country_code2) {
-		this.country_code2 = country_code2;
+	public void setCountryCode2(char countryCode2) {
+		this.countryCode2 = countryCode2;
 	}
 
 
-	public char getCountry_code3() {
-		return country_code3;
+	public char getCountryCode3() {
+		return countryCode3;
 	}
 
 
-	public void setCountry_code3(char country_code3) {
-		this.country_code3 = country_code3;
+	public void setCountryCode3(char countryCode3) {
+		this.countryCode3 = countryCode3;
 	}
 
 
-	public Country getRegion() {
+	public Region getRegion() {
 		return region;
 	}
 
 
-	public void setRegion(Country region) {
+	public void setRegion(Region region) {
 		this.region = region;
 	}
+
+
+
 	
 
 	

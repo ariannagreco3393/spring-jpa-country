@@ -19,9 +19,8 @@ public class Region {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int region_id;
+	private int regionId;
 	private String name;
-	private int continent_id;
 	
 	@OneToMany
 	@JoinColumn(name = "region", nullable = false)
@@ -33,13 +32,15 @@ public class Region {
 	private Continent continent;
 
 
-	public int getRegion_id() {
-		return region_id;
+	
+
+	public int getRegionId() {
+		return regionId;
 	}
 
 
-	public void setRegion_id(int region_id) {
-		this.region_id = region_id;
+	public void setRegionId(int regionId) {
+		this.regionId = regionId;
 	}
 
 

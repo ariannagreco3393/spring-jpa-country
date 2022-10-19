@@ -19,7 +19,7 @@ public class Continent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private int continent_id;
+	private int continentId;
 	private String name;
 	
 	
@@ -28,13 +28,15 @@ public class Continent {
     private List<Region> region;
 
 
-	public int getContinent_id() {
-		return continent_id;
+	
+
+	public int getContinentId() {
+		return continentId;
 	}
 
 
-	public void setContinent_id(int continent_id) {
-		this.continent_id = continent_id;
+	public void setContinentId(int continentId) {
+		this.continentId = continentId;
 	}
 
 
