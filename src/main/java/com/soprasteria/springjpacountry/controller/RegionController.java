@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.soprasteria.springjpacountry.model.Region;
 import com.soprasteria.springjpacountry.repository.RegionRepository;
 
 @RestController
-@RequestMapping("/api/*") // tutte le richieste del tipo /api/*
+@RequestMapping("/api/*") 
 
 public class RegionController  {
 	
@@ -36,6 +37,18 @@ public class RegionController  {
 		else
 			return new Region();
 	}
+	
+
+	
+	
+	@GetMapping("/regionbycontinent")
+	public List<Region> getRegionByContinent(@PathVariable(value = "continent", required = false) String name) {
+		if(name == null)
+			return (List<Region>) regionRepository.findAll();
+		else
+			return (List<Region>) regionRepository.findByContinent(name);
+	}
+	
 	
 
 }

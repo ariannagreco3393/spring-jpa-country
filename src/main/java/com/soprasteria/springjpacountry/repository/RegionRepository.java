@@ -8,6 +8,5 @@ import com.soprasteria.springjpacountry.model.Region;
 
 public interface RegionRepository extends CrudRepository<Region, Integer> {
 
-	
-	
+	public List<Region> findByContinent(String name);
 }

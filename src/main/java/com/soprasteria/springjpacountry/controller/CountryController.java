@@ -37,5 +37,14 @@ public class CountryController {
 			return new Country();
 	}
 	
+	@GetMapping("/countrybyregion")
+	public List<Country> getContryByRegion(@PathVariable(value = "region", required = false) String name) {
+		if(name == null)
+			return (List<Country>) countryRepository.findAll();
+		else
+			return (List<Country>) countryRepository.findByregion(name);
+	}
+	
+	
 	
 }
