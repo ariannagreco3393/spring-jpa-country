@@ -3,6 +3,7 @@ package com.soprasteria.springjpacountry.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,12 +18,15 @@ public class Country {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+	@Column(name="country_id")
 	private int countryId;
 	private String name;
 	private BigDecimal area;
+	@Column(name="national_day")
 	private LocalDate nationalDay;
+	@Column(name="country_code2")
 	private char countryCode2;
+	@Column(name="country_code3")
 	private char countryCode3;
 	
 	

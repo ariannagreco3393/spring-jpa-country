@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,15 +20,10 @@ public class Continent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
+	@Column(name = "continent_id")
 	private int continentId;
 	private String name;
 	
-	
-	@OneToMany
-	@JoinColumn(name = "continent", nullable = false)
-    private List<Region> region;
-
-
 	
 
 	public int getContinentId() {
@@ -50,14 +46,7 @@ public class Continent {
 	}
 
 
-	public List<Region> getRegion() {
-		return region;
-	}
-
-
-	public void setRegion(List<Region> region) {
-		this.region = region;
-	}
+	
 	
 	
 	
