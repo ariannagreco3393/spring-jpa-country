@@ -44,7 +44,7 @@ public class CountryController {
 			return new Country();
 	}
 
-	@GetMapping("/countrybyregion")
+	@GetMapping("/countrybyregion") 
 	public List<Country> getContryByRegion(@PathVariable(value = "region", required = false) String name) {
 		if (name == null)
 			return (List<Country>) countryRepository.findAll();
@@ -52,19 +52,20 @@ public class CountryController {
 			return (List<Country>) countryRepository.findByregion(name);
 	}
 
-	@DeleteMapping("/country/{countryId}")
+	@DeleteMapping("/country/{countryId}") //delete
 	public void deleteCountryById(@PathVariable(value = "countryId") int countryId) {
 		countryRepository.deleteById(countryId);
 	}
-
-	@PostMapping("/country")
+	
+	
+	@PostMapping("/country") //create
 	public Country createStudent(@RequestBody Country country) {
 		return countryRepository.save(country);
 
 	}
 	
 	
-	@PutMapping("/country/{countryId}")  
+	@PutMapping("/country/{countryId}")  //update
 	public ResponseEntity<Country>  updateStudent(
 			@PathVariable(value = "studentId") int CountryId,
 			@RequestBody Country country) {
