@@ -22,8 +22,7 @@ public class Country {
 	private int countryId;
 	private String name;
 	private BigDecimal area;
-	@Column(name="national_day")
-	private LocalDate nationalDay;
+	
 	@Column(name="country_code2")
 	private char countryCode2;
 	@Column(name="country_code3")
@@ -65,14 +64,7 @@ public class Country {
 	}
 
 
-	public LocalDate getNationalDay() {
-		return nationalDay;
-	}
-
-
-	public void setNationalDay(LocalDate nationalDay) {
-		this.nationalDay = nationalDay;
-	}
+	
 
 
 	public char getCountryCode2() {
